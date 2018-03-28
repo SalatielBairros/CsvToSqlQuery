@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace CsvToSqlQuery
 {
-    public partial class Form1 : Form
+    public partial class CsvToSql : Form
     {
-        public Form1()
+        public CsvToSql()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
