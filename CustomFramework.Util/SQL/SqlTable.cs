@@ -37,15 +37,14 @@ namespace CustomFramework.Util.SQL
         {
             if (!Columns.Any()) throw new InvalidOperationException();
 
-            var sqlQuery = $@"CREATE TABLE {TableName} (
-                        {string.Join(",", Columns.Select(x => x.ToString()).ToArray())}
-                    )";
+            var sqlQuery =
+                $"CREATE TABLE {TableName} ({string.Join(",", Columns.Select(x => x.ToString()).ToArray())})";
 
             if (!DataRows.Any()) return sqlQuery;
 
             sqlQuery += Environment.NewLine;
-            sqlQuery += $@"INSERT INTO {TableName} ({string.Join(",", Columns.Select(x => x.ColumnName))})
-                                VALUES {string.Join(",", DataRows.Select(x => $"{Environment.NewLine} ({string.Join(",", x)}"))}";
+            sqlQuery += $"INSERT INTO {TableName} ({string.Join(",", Columns.Select(x => x.ColumnName))}) " +
+                        $"VALUES {string.Join(",", DataRows.Where(x => x.Count == Columns.Count).Select(x => $"{Environment.NewLine} ('{string.Join("','", x.Select(y => y.Replace("'", string.Empty)))}')"))}";
             return sqlQuery;
         }
     }

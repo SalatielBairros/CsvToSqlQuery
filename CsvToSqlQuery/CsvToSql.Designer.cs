@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFile = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGerar = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtTabela = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtFile
             // 
-            this.textBox1.Location = new System.Drawing.Point(40, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(347, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtFile.Location = new System.Drawing.Point(40, 107);
+            this.txtFile.Name = "txtFile";
+            this.txtFile.Size = new System.Drawing.Size(347, 20);
+            this.txtFile.TabIndex = 0;
             // 
             // button1
             // 
@@ -72,26 +75,50 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Arquivo Origem";
             // 
-            // button2
+            // btnGerar
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(40, 163);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(391, 44);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "GERAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnGerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGerar.Location = new System.Drawing.Point(40, 215);
+            this.btnGerar.Name = "btnGerar";
+            this.btnGerar.Size = new System.Drawing.Size(391, 44);
+            this.btnGerar.TabIndex = 6;
+            this.btnGerar.Text = "GERAR";
+            this.btnGerar.UseVisualStyleBackColor = true;
+            this.btnGerar.Click += new System.EventHandler(this.btnGerar_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "CSV Files|*.csv";
+            // 
+            // txtTabela
+            // 
+            this.txtTabela.Location = new System.Drawing.Point(40, 166);
+            this.txtTabela.Name = "txtTabela";
+            this.txtTabela.Size = new System.Drawing.Size(164, 20);
+            this.txtTabela.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(37, 142);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Nome Tabela";
             // 
             // CsvToSql
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 294);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtTabela);
+            this.Controls.Add(this.btnGerar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtFile);
             this.Name = "CsvToSql";
             this.Text = "CSV to SQL";
             this.ResumeLayout(false);
@@ -101,11 +128,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFile;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGerar;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox txtTabela;
+        private System.Windows.Forms.Label label3;
     }
 }
 

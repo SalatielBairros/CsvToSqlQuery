@@ -35,8 +35,7 @@ namespace CustomFramework.Util.IO
         {
             return Using(
                 () => File.OpenText(fileName),
-                file => file.ReadToEnd().Split('\n').Where(predicate)).ToArray();
-
+                file => file.ReadToEnd().Replace("\r",string.Empty).Split('\n').Where(predicate)).ToArray();
         }
 
         public static string[] ReadFileLines(string fileName)

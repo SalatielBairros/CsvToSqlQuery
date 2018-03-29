@@ -9,7 +9,7 @@ namespace CustomFramework.Util.SQL
 {
     public class SqlQueryExport
     {
-        public void CsvToQuery(string fileName, string tableName, string retFile, char separator = ';', bool firstLineAsColumns = true)
+        public static void CsvToQuery(string fileName, string tableName, string retFile, char separator = ';', bool firstLineAsColumns = true)
         {
             if(!fileName.EndsWith(".csv")) throw new ArgumentException();
             string[] fileLines = FileActions.ReadFileLines(fileName);

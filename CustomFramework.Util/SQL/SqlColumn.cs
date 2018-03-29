@@ -32,7 +32,7 @@
 
         public override string ToString()
         {
-            return $"{ColumnName} {DataType} {NullDef} {PkDef}";
+            return $" {ColumnName} {DataType} {NullDef} {PkDef}";
         }
     }
 }
